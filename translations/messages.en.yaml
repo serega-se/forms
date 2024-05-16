@@ -1,0 +1,15 @@
+guest_edit_header: Guest edit
+back_to_list: Back to list
+guest_show_header: Guest show
+id_col: Id
+firstname_col: Firstname
+lastname_col: Lastname
+description_col: Description
+edit_guest_action: Edit guest
+guest_index_header: Guest list
+actions_col: Actions
+show_guest_action: Show_guest
+no_records_found: No records found
+new_guest_action: New guest
+guest_new_header: New guest
+delete_form_action: Delete

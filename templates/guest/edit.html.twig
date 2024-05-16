@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "guest_edit_header"|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ "guest_edit_header"|trans }}</h1>
+
+    {{ include('guest/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_guest_index') }}">{{ "back_to_list"|trans }}</a>
+
+    {{ include('guest/_delete_form.html.twig') }}
+{% endblock %}

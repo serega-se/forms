@@ -1,0 +1,16 @@
+guest_edit_header: Редактирование гостя
+back_to_list: Назад к списку
+guest_show_header: Гость
+id_col: Ид
+firstname_col: Имя
+lastname_col: Фамилия
+description_col: Описание
+edit_guest_action: Редактирование
+guest_index_header: Список гостей
+actions_col: Действия
+show_guest_action: Показать
+no_records_found: Записей не найдено
+new_guest_action: Добавить гостя
+guest_new_header: Новый гость
+delete_form_action: Удалить
+

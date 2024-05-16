@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "guest_new_header"|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ "guest_new_header"|trans }}</h1>
+
+    {{ include('guest/_form.html.twig') }}
+
+    <a href="{{ path('app_guest_index') }}">{{ "back_to_list"|trans }}</a>
+{% endblock %}

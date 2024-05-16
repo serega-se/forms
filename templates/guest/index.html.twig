@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "guest_index_header"|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ "guest_index_header"|trans }}</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{ "id_col"|trans }}</th>
+                <th>{{ "firstname_col"|trans }}</th>
+                <th>{{ "lastname_col"|trans }}</th>
+                <th>{{ "description_col"|trans }}</th>
+                <th>{{ "actions_col"|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for guest in guests %}
+            <tr>
+                <td>{{ guest.id }}</td>
+                <td>{{ guest.firstname }}</td>
+                <td>{{ guest.lastname }}</td>
+                <td>{{ guest.description }}</td>
+                <td>
+                    <a href="{{ path('app_guest_show', {'id': guest.id}) }}">{{ "show_guest_action"|trans }}</a>
+                    <a href="{{ path('app_guest_edit', {'id': guest.id}) }}">{{ "edit_guest_action"|trans }}</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">{{ "no_records_found"|trans }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_guest_new') }}">{{ "new_guest_action"|trans }}</a>
+{% endblock %}
