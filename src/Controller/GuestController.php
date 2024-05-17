@@ -14,7 +14,12 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/guest')]
 class GuestController extends AbstractController
 {
-    #[Route('/{_locale}/', name: 'app_guest_index', locale: 'en', methods: ['GET'])]
+    #[Route(
+        '/{_locale}',
+        name: 'app_guest_index',
+        locale: '%env(DEFAULT_LOCALE)',
+        methods: ['GET']
+        )]
     public function index(GuestRepository $guestRepository): Response
     {
         return $this->render('guest/index.html.twig', [
@@ -22,7 +27,12 @@ class GuestController extends AbstractController
         ]);
     }
 
-    #[Route('/{_locale}/new', name: 'app_guest_new', locale: 'en', methods: ['GET', 'POST'])]
+    #[Route(
+        '/{_locale}/new',
+        name: 'app_guest_new',
+        locale: '%env(DEFAULT_LOCALE)',
+        methods: ['GET', 'POST']
+        )]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $guest = new Guest();
@@ -42,7 +52,12 @@ class GuestController extends AbstractController
         ]);
     }
 
-    #[Route('/{_locale}/{id}', name: 'app_guest_show', locale: 'en', methods: ['GET'])]
+    #[Route(
+        '/{_locale}/{id}',
+        name: 'app_guest_show',
+        locale: '%env(DEFAULT_LOCALE)',
+        methods: ['GET']
+        )]
     public function show(Guest $guest): Response
     {
         return $this->render('guest/show.html.twig', [
@@ -50,7 +65,12 @@ class GuestController extends AbstractController
         ]);
     }
 
-    #[Route('/{_locale}/{id}/edit', name: 'app_guest_edit', locale: 'en', methods: ['GET', 'POST'])]
+    #[Route(
+        '/{_locale}/{id}/edit',
+        name: 'app_guest_edit',
+        locale: '%env(DEFAULT_LOCALE)',
+        methods: ['GET', 'POST']
+        )]
     public function edit(Request $request, Guest $guest, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(GuestType::class, $guest);
@@ -68,7 +88,12 @@ class GuestController extends AbstractController
         ]);
     }
 
-    #[Route('/{_locale}/{id}', name: 'app_guest_delete', locale: 'en', methods: ['POST'])]
+    #[Route(
+        '/{_locale}/{id}',
+        name: 'app_guest_delete',
+        locale: '%env(DEFAULT_LOCALE)',
+        methods: ['POST']
+        )]
     public function delete(Request $request, Guest $guest, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$guest->getId(), $request->getPayload()->get('_token'))) {
